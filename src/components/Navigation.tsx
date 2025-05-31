@@ -1,24 +1,16 @@
 
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
 
 const Navigation = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { href: '#features', label: 'Features' },
-    { href: '#assistant', label: 'Assistant' },
-    { href: '#tech', label: 'Technology' },
-    { href: '#impact', label: 'Impact' },
-    { href: '#demo', label: 'Demo' },
-    { href: '#team', label: 'Team' },
-    { href: '#support', label: 'Support' },
-    { href: '#contact', label: 'Contact' },
-  ];
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <>
-      <nav className="w-full bg-gray-900/80 backdrop-blur sticky top-0 z-50 flex items-center justify-between px-4 md:px-10 py-3 shadow-lg animate-fade-in">
+      <nav className="w-full bg-gray-900/80 backdrop-blur sticky top-0 z-50 flex items-center justify-between px-4 md:px-10 py-3 shadow-lg animate-fadeInDown">
         <div className="flex items-center gap-3">
           <img 
             src="https://img.icons8.com/color/48/000000/heart-with-pulse--v2.png" 
@@ -29,38 +21,39 @@ const Navigation = () => {
         </div>
         
         <div className="hidden lg:flex space-x-4 md:space-x-8 text-sm md:text-lg font-medium">
-          {navItems.map((item) => (
-            <a 
-              key={item.href}
-              href={item.href} 
-              className="hover:text-cyan-400 transition duration-200"
-            >
-              {item.label}
-            </a>
-          ))}
+          <a href="#features" className="hover:text-cyan-400 transition duration-200">Features</a>
+          <a href="#assistant" className="hover:text-cyan-400 transition duration-200">Assistant</a>
+          <a href="#tech" className="hover:text-cyan-400 transition duration-200">Technology</a>
+          <a href="#impact" className="hover:text-cyan-400 transition duration-200">Impact</a>
+          <a href="#demo" className="hover:text-cyan-400 transition duration-200">Demo</a>
+          <a href="#team" className="hover:text-cyan-400 transition duration-200">Team</a>
+          <a href="#community" className="hover:text-cyan-400 transition duration-200">Community</a>
+          <a href="#support" className="hover:text-cyan-400 transition duration-200">Support</a>
+          <a href="#contact" className="hover:text-cyan-400 transition duration-200">Contact</a>
         </div>
         
         <button 
           className="lg:hidden block text-cyan-400 focus:outline-none" 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={toggleMobileMenu}
         >
-          {isMenuOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
         </button>
       </nav>
       
       {/* Mobile Nav */}
-      {isMenuOpen && (
-        <div className="lg:hidden flex flex-col px-6 py-4 bg-gray-900/90 backdrop-blur z-40 animate-fade-in">
-          {navItems.map((item) => (
-            <a 
-              key={item.href}
-              href={item.href} 
-              className="py-2 hover:text-cyan-400 transition"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden flex flex-col px-6 py-4 bg-gray-900/90 backdrop-blur z-40 animate-fadeInDown">
+          <a href="#features" className="py-2 hover:text-cyan-400 transition">Features</a>
+          <a href="#assistant" className="py-2 hover:text-cyan-400 transition">Assistant</a>
+          <a href="#tech" className="py-2 hover:text-cyan-400 transition">Technology</a>
+          <a href="#impact" className="py-2 hover:text-cyan-400 transition">Impact</a>
+          <a href="#demo" className="py-2 hover:text-cyan-400 transition">Demo</a>
+          <a href="#team" className="py-2 hover:text-cyan-400 transition">Team</a>
+          <a href="#community" className="py-2 hover:text-cyan-400 transition">Community</a>
+          <a href="#support" className="py-2 hover:text-cyan-400 transition">Support</a>
+          <a href="#contact" className="py-2 hover:text-cyan-400 transition">Contact</a>
         </div>
       )}
     </>

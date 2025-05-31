@@ -9,6 +9,7 @@ import TechnologySection from '../components/TechnologySection';
 import ImpactSection from '../components/ImpactSection';
 import DemoSection from '../components/DemoSection';
 import TeamSection from '../components/TeamSection';
+import JoinCommunitySection from '../components/JoinCommunitySection';
 import SupportSection from '../components/SupportSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
@@ -25,6 +26,7 @@ const Index = () => {
       <ImpactSection />
       <DemoSection />
       <TeamSection />
+      <JoinCommunitySection />
       <SupportSection />
       <ContactSection />
       <Footer />
