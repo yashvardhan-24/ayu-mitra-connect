@@ -14,7 +14,7 @@ const HeroSection = () => {
           elderly, students, and underserved communities across India.
         </p>
         <a 
-          href="#contact" 
+          href="mailto:yash.vardhan2023@glbajajgroup.org" 
           className="inline-block px-7 py-3 rounded-full bg-cyan-500 text-white font-bold shadow-lg ring-2 ring-cyan-400 hover:bg-cyan-600 transition duration-200 hover:scale-105"
         >
           Get in Touch

@@ -7,20 +7,20 @@ const ImageSlider = () => {
   
   const images = [
     {
-      src: "https://img.freepik.com/free-vector/medical-mobile-app-interface-concept_23-2148502077.jpg",
-      alt: "Health Monitoring UI"
+      src: "https://img.freepik.com/free-vector/telemedicine-concept-illustration_114360-1474.jpg",
+      alt: "AI Health Assistant"
     },
     {
-      src: "https://img.freepik.com/free-vector/doctor-online-consultation-smartphone_23-2148588761.jpg",
-      alt: "Doctor Consultation"
+      src: "https://img.freepik.com/free-vector/health-professional-team_23-2148498483.jpg",
+      alt: "Healthcare Team Support"
     },
     {
-      src: "https://img.freepik.com/free-vector/health-checkup-app-interface_52683-39082.jpg",
-      alt: "Vital Signs Tracking"
+      src: "https://img.freepik.com/free-vector/health-care-technology-concept_23-2148537740.jpg",
+      alt: "Digital Health Monitoring"
     },
     {
-      src: "https://img.freepik.com/free-vector/human-posture-corrector-app_23-2148559677.jpg",
-      alt: "Posture & Alerts"
+      src: "https://img.freepik.com/free-vector/elderly-care-concept-illustration_114360-8828.jpg",
+      alt: "Elderly Care & Support"
     }
   ];
 

@@ -14,7 +14,7 @@ const TechnologySection = () => {
       description: "Data is secure, access-controlled, and uses anonymization for stakeholders."
     },
     {
-      icon: "https://img.icons8.com/fluency/48/000000/health-book.png",
+      icon: "https://img.icons8.com/color/48/000000/smartwatch.png",
       title: "Smartphone & Wearable Integration",
       description: "Connects with sensors and wearables for real-time health tracking and emergency response."
     },

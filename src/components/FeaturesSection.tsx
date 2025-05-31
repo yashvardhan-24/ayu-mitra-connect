@@ -10,7 +10,7 @@ const FeaturesSection = () => {
       animation: "animate-fade-in"
     },
     {
-      icon: "https://img.icons8.com/color/96/000000/health-monitor.png",
+      icon: "https://img.icons8.com/color/96/000000/heart-monitor.png",
       title: "Vital Monitoring & Alerts",
       description: "Tracks vitals, detects falls, reminds medicines, alerts on posture & emotional stress for holistic care.",
       animation: "animate-scale-in"
