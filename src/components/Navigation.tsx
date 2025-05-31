@@ -27,7 +27,6 @@ const Navigation = () => {
           <a href="#impact" className="hover:text-cyan-400 transition duration-200">Impact</a>
           <a href="#demo" className="hover:text-cyan-400 transition duration-200">Demo</a>
           <a href="#team" className="hover:text-cyan-400 transition duration-200">Team</a>
-          <a href="#community" className="hover:text-cyan-400 transition duration-200">Community</a>
           <a href="#support" className="hover:text-cyan-400 transition duration-200">Support</a>
           <a href="#contact" className="hover:text-cyan-400 transition duration-200">Contact</a>
         </div>
@@ -51,7 +50,6 @@ const Navigation = () => {
           <a href="#impact" className="py-2 hover:text-cyan-400 transition">Impact</a>
           <a href="#demo" className="py-2 hover:text-cyan-400 transition">Demo</a>
           <a href="#team" className="py-2 hover:text-cyan-400 transition">Team</a>
-          <a href="#community" className="py-2 hover:text-cyan-400 transition">Community</a>
           <a href="#support" className="py-2 hover:text-cyan-400 transition">Support</a>
           <a href="#contact" className="py-2 hover:text-cyan-400 transition">Contact</a>
         </div>
