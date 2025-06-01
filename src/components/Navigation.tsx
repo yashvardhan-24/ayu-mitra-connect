@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,6 +32,21 @@ const Navigation = () => {
           <a href="#contact" className="hover:text-cyan-400 transition duration-200">Contact</a>
         </div>
         
+        <div className="hidden lg:flex items-center space-x-4">
+          <Link 
+            to="/login" 
+            className="text-cyan-400 hover:text-cyan-300 transition duration-200 font-medium"
+          >
+            Login
+          </Link>
+          <Link 
+            to="/signup" 
+            className="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-full transition duration-200 font-medium"
+          >
+            Sign Up
+          </Link>
+        </div>
+        
         <button 
           className="lg:hidden block text-cyan-400 focus:outline-none" 
           onClick={toggleMobileMenu}
@@ -52,6 +68,20 @@ const Navigation = () => {
           <a href="#team" className="py-2 hover:text-cyan-400 transition">Team</a>
           <a href="#support" className="py-2 hover:text-cyan-400 transition">Support</a>
           <a href="#contact" className="py-2 hover:text-cyan-400 transition">Contact</a>
+          <div className="border-t border-gray-600 mt-4 pt-4 flex flex-col space-y-2">
+            <Link 
+              to="/login" 
+              className="py-2 text-cyan-400 hover:text-cyan-300 transition"
+            >
+              Login
+            </Link>
+            <Link 
+              to="/signup" 
+              className="py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg text-center transition"
+            >
+              Sign Up
+            </Link>
+          </div>
         </div>
       )}
     </>

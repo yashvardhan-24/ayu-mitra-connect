@@ -83,7 +83,7 @@ const ContactSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
-              href="https://t.me/ayumitra_community" 
+              href="https://t.me/ayu_mitra1" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-cyan-500 hover:bg-cyan-700 transition px-6 py-3 rounded-full text-white font-bold shadow-lg flex items-center gap-2 hover:scale-105 transform duration-200"
@@ -97,7 +97,7 @@ const ContactSection = () => {
             </a>
             
             <a 
-              href="https://discord.gg/ayumitra" 
+              href="https://discord.gg/5s8RTaKz" 
               target="_blank" 
               rel="noopener noreferrer"
               className="bg-gray-800 hover:bg-cyan-600 transition px-6 py-3 rounded-full text-white font-bold shadow-lg flex items-center gap-2 hover:scale-105 transform duration-200"
@@ -111,7 +111,7 @@ const ContactSection = () => {
             </a>
             
             <a 
-              href="mailto:community@ayumitra.com" 
+              href="mailto:yash.vardhan2023@glbajajgroup.org" 
               className="bg-cyan-600 hover:bg-cyan-800 transition px-6 py-3 rounded-full text-white font-bold shadow-lg flex items-center gap-2 hover:scale-105 transform duration-200"
             >
               <Mail className="h-6 w-6 text-white" />
