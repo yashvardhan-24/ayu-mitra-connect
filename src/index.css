@@ -191,6 +191,30 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(240deg);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-100px) translateY(0px);
+  }
+  50% {
+    transform: translateX(100px) translateY(-50px);
+  }
+  100% {
+    transform: translateX(-100px) translateY(0px);
+  }
+}
+
 .animate-fadeInUp {
   animation: fadeInUp 1s both;
 }
@@ -213,4 +237,12 @@
 
 .animate-glow {
   animation: glow 2s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-drift {
+  animation: drift 8s ease-in-out infinite;
 }
