@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Smartphone } from 'lucide-react';
 
 const TechnologySection = () => {
   const techFeatures = [
@@ -14,7 +15,7 @@ const TechnologySection = () => {
       description: "Data is secure, access-controlled, and uses anonymization for stakeholders."
     },
     {
-      icon: "https://img.icons8.com/color/48/000000/smartwatch.png",
+      icon: <Smartphone className="h-8 w-8 text-cyan-400" />,
       title: "Smartphone & Wearable Integration",
       description: "Connects with sensors and wearables for real-time health tracking and emergency response."
     },
@@ -44,7 +45,11 @@ const TechnologySection = () => {
               style={{ animationDelay: `${index * 0.12}s` }}
             >
               <span className="inline-block bg-cyan-600 p-3 rounded-full">
-                <img src={feature.icon} alt={feature.title} className="h-8" />
+                {typeof feature.icon === 'string' ? (
+                  <img src={feature.icon} alt={feature.title} className="h-8" />
+                ) : (
+                  feature.icon
+                )}
               </span>
               <div>
                 <h4 className="font-bold text-lg text-white">{feature.title}</h4>
@@ -55,7 +60,7 @@ const TechnologySection = () => {
         </div>
         <div className="flex items-center justify-center animate-fade-in">
           <img 
-            src="https://img.freepik.com/free-vector/artificial-intelligence-robot-medicine-concept_23-2148555313.jpg" 
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
             alt="AI Tech" 
             className="w-full max-w-xs md:max-w-md rounded-2xl shadow-xl border-4 border-cyan-400 transition-transform duration-300 hover:scale-105"
           />

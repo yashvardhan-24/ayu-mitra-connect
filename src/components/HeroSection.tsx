@@ -22,7 +22,7 @@ const HeroSection = () => {
       </div>
       <div className="w-full lg:w-1/2 flex justify-center items-center">
         <img 
-          src="https://img.freepik.com/premium-vector/modern-healthcare-technology-concept-doctor-with-digital-interface-medical-data-ai-assistance_1287720-12345.jpg" 
+          src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80" 
           alt="AI Healthcare Technology" 
           className="max-h-48 sm:max-h-60 md:max-h-72 lg:max-h-80 xl:max-h-96 w-auto rounded-2xl sm:rounded-3xl shadow-2xl border-2 sm:border-4 border-cyan-500 transition-transform duration-300 hover:scale-105"
         />
