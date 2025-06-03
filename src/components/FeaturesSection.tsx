@@ -39,10 +39,10 @@ const FeaturesSection = () => {
               e.currentTarget.src = "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?ixlib=rb-4.0.3&w=96&h=96&fit=crop";
             }}
           />
-          <h3 className="text-lg md:text-xl font-bold text-cyan-300 mb-2">
+          <h3 className="text-responsive-lg font-bold text-cyan-300 mb-2">
             {feature.title}
           </h3>
-          <p className="text-gray-200">{feature.description}</p>
+          <p className="text-responsive-sm text-gray-200">{feature.description}</p>
         </div>
       ))}
     </section>
