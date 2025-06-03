@@ -1,19 +1,86 @@
 
-import React, { useState } from 'react';
-import { Mic } from 'lucide-react';
+import React from 'react';
+import { Mic, MicOff, Loader2 } from 'lucide-react';
+import { useVoiceAssistant } from '../hooks/useVoiceAssistant';
 
 const AssistantSection = () => {
-  const [isListening, setIsListening] = useState(false);
-  const [message, setMessage] = useState('');
+  const { 
+    state, 
+    transcript, 
+    response, 
+    error, 
+    startListening, 
+    stopListening 
+  } = useVoiceAssistant();
 
   const handleTapToTalk = () => {
-    setIsListening(true);
-    setMessage('👋 Namaste! Hello! नमस्कार! I am Ayu Assistant. How can I help you today? Say or type your health question…');
+    if (state === 'listening') {
+      stopListening();
+    } else if (state === 'idle') {
+      startListening();
+    }
+  };
+
+  const getButtonContent = () => {
+    switch (state) {
+      case 'listening':
+        return (
+          <>
+            <MicOff className="h-7 w-7 animate-pulse" />
+            Stop Listening
+          </>
+        );
+      case 'processing':
+        return (
+          <>
+            <Loader2 className="h-7 w-7 animate-spin" />
+            Processing...
+          </>
+        );
+      case 'speaking':
+        return (
+          <>
+            <Loader2 className="h-7 w-7 animate-spin" />
+            Speaking...
+          </>
+        );
+      default:
+        return (
+          <>
+            <Mic className="h-7 w-7 animate-pulse" />
+            Tap to Talk
+          </>
+        );
+    }
+  };
+
+  const getStatusMessage = () => {
+    if (error) {
+      return <span className="text-red-300">{error}</span>;
+    }
     
-    setTimeout(() => {
-      setMessage('🌐 I can answer in your language, give health tips, medicine reminders, and more!');
-      setIsListening(false);
-    }, 4000);
+    if (transcript) {
+      return <span className="text-cyan-100">You said: "{transcript}"</span>;
+    }
+    
+    if (response) {
+      return <span className="text-cyan-100">Ayu: {response}</span>;
+    }
+
+    switch (state) {
+      case 'listening':
+        return <span className="text-cyan-100 animate-pulse">🎤 Listening... Speak now!</span>;
+      case 'processing':
+        return <span className="text-cyan-100 animate-pulse">🤔 Processing your request...</span>;
+      case 'speaking':
+        return <span className="text-cyan-100 animate-pulse">🗣️ Ayu is responding...</span>;
+      default:
+        return (
+          <span className="text-cyan-100">
+            👋 Namaste! Hello! नमस्कार! I am Ayu Assistant. How can I help you today? Tap the button and speak your health question…
+          </span>
+        );
+    }
   };
 
   return (
@@ -41,11 +108,14 @@ const AssistantSection = () => {
         
         <button 
           onClick={handleTapToTalk}
-          disabled={isListening}
-          className="mt-4 px-8 py-4 bg-gradient-to-r from-cyan-500 to-cyan-700 text-white rounded-full font-bold text-xl shadow-xl ring-2 ring-cyan-400 hover:scale-105 hover:bg-cyan-600 active:scale-95 transition duration-200 flex items-center gap-3 disabled:opacity-70"
+          disabled={state === 'processing' || state === 'speaking'}
+          className={`mt-4 px-8 py-4 bg-gradient-to-r text-white rounded-full font-bold text-xl shadow-xl ring-2 ring-cyan-400 hover:scale-105 active:scale-95 transition duration-200 flex items-center gap-3 disabled:opacity-70 ${
+            state === 'listening' 
+              ? 'from-red-500 to-red-700 hover:bg-red-600' 
+              : 'from-cyan-500 to-cyan-700 hover:bg-cyan-600'
+          }`}
         >
-          <Mic className="h-7 w-7 animate-pulse" />
-          Tap to Talk
+          {getButtonContent()}
         </button>
         
         <div className="mt-6 text-cyan-200 font-semibold text-lg flex flex-col gap-2">
@@ -59,17 +129,13 @@ const AssistantSection = () => {
           </span>
           <span className="flex items-center gap-2 justify-center">
             <div className="h-5 w-5 text-cyan-300 animate-pulse">💬</div>
-            Instant Answers, Audio & Text, User-Friendly
+            Voice & Text, Multilingual, User-Friendly
           </span>
         </div>
         
-        {message && (
-          <div className="mt-6 text-base text-cyan-100 font-semibold transition-all duration-300">
-            <span className={isListening ? 'animate-pulse' : 'animate-bounce'}>
-              {message}
-            </span>
-          </div>
-        )}
+        <div className="mt-6 text-base text-cyan-100 font-semibold transition-all duration-300 min-h-[2rem]">
+          {getStatusMessage()}
+        </div>
       </div>
     </section>
   );
